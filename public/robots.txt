@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+Sitemap: https://services-website-weld.vercel.app/sitemap.xml
+Host: https://services-website-weld.vercel.app
