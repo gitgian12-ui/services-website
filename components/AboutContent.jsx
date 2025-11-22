@@ -1,65 +1,69 @@
-'use client'
-import { motion } from 'framer-motion'
-import Image from 'next/image'
-import Link from 'next/link'
-import CountUpAnimation from './CountUpAnimation'
+"use client";
+import { motion } from "framer-motion";
+import Image from "next/image";
+import Link from "next/link";
+import CountUpAnimation from "./CountUpAnimation";
 
-export const dynamic = "force-static"
+export const dynamic = "force-static";
 
 export default function AboutContent() {
   const skills = [
-    { name: 'Next.js', level: 85, icon: '⚛️' },
-    { name: 'React', level: 80, icon: '⚛️' },
-    { name: 'Tailwind CSS', level: 90, icon: '🎨' },
-    { name: 'JavaScript', level: 75, icon: '💛' },
-    { name: 'UI/UX Design', level: 70, icon: '✨' },
-    { name: 'SEO Optimization', level: 65, icon: '🔍' },
-  ]
+    { name: "Next.js", level: 85, icon: "⚛️" },
+    { name: "React", level: 80, icon: "⚛️" },
+    { name: "Tailwind CSS", level: 90, icon: "🎨" },
+    { name: "JavaScript", level: 75, icon: "💛" },
+    { name: "UI/UX Design", level: 70, icon: "✨" },
+    { name: "SEO Optimization", level: 65, icon: "🔍" },
+  ];
 
   const journey = [
     {
-      year: '2023',
-      title: 'Mulai Belajar Web Development',
-      description: 'Memulai perjalanan coding dari dasar HTML, CSS, dan JavaScript',
+      year: "2023",
+      title: "Mulai Belajar Web Development",
+      description:
+        "Memulai perjalanan coding dari dasar HTML, CSS, dan JavaScript",
     },
     {
-      year: '2024',
-      title: 'Menguasai React & Next.js',
-      description: 'Belajar framework modern dan mulai mengerjakan project client pertama',
+      year: "2024",
+      title: "Menguasai React & Next.js",
+      description:
+        "Belajar framework modern dan mulai mengerjakan project client pertama",
     },
     {
-      year: '2025',
-      title: 'Website Services Launch',
-      description: 'Membangun bisnis pembuatan website profesional untuk UMKM & startup',
+      year: "2025",
+      title: "Website Services Launch",
+      description:
+        "Membangun bisnis pembuatan website profesional untuk UMKM & startup",
     },
-  ]
+  ];
 
   const values = [
     {
-      icon: '💡',
-      title: 'Inovasi',
-      description: 'Selalu menggunakan teknologi terkini dan trend design modern',
+      icon: "💡",
+      title: "Inovasi",
+      description:
+        "Selalu menggunakan teknologi terkini dan trend design modern",
     },
     {
-      icon: '⚡',
-      title: 'Kecepatan',
-      description: 'Pengerjaan cepat tanpa mengorbankan kualitas hasil',
+      icon: "⚡",
+      title: "Kecepatan",
+      description: "Pengerjaan cepat tanpa mengorbankan kualitas hasil",
     },
     {
-      icon: '🤝',
-      title: 'Kolaborasi',
-      description: 'Komunikasi terbuka dan feedback yang konstruktif',
+      icon: "🤝",
+      title: "Kolaborasi",
+      description: "Komunikasi terbuka dan feedback yang konstruktif",
     },
     {
-      icon: '🎯',
-      title: 'Fokus pada Hasil',
-      description: 'Website yang tidak hanya cantik, tapi juga menghasilkan konversi',
+      icon: "🎯",
+      title: "Fokus pada Hasil",
+      description:
+        "Website yang tidak hanya cantik, tapi juga menghasilkan konversi",
     },
-  ]
+  ];
 
   return (
     <div className="relative py-20 px-4 sm:px-6 lg:px-8">
-      
       {/* Background decorations */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute top-40 left-10 w-72 h-72 bg-blue-400/10 dark:bg-blue-500/10 rounded-full blur-3xl"></div>
@@ -67,7 +71,6 @@ export default function AboutContent() {
       </div>
 
       <div className="relative max-w-6xl mx-auto">
-        
         {/* Hero Section */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -76,10 +79,14 @@ export default function AboutContent() {
           className="text-center mb-20"
         >
           <h1 className="text-5xl md:text-6xl font-black text-gray-900 dark:text-white mb-6">
-            Tentang <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 dark:from-blue-400 dark:via-purple-400 dark:to-pink-400">Kami</span>
+            Tentang{" "}
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 dark:from-blue-400 dark:via-purple-400 dark:to-pink-400">
+              Saya
+            </span>
           </h1>
           <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
-            Developer muda yang passionate dalam menciptakan website modern untuk mengakselerasi bisnis digital Anda
+            Developer muda yang passionate dalam menciptakan website modern
+            untuk mengakselerasi bisnis digital Anda
           </p>
         </motion.div>
 
@@ -93,24 +100,29 @@ export default function AboutContent() {
           {/* Image Placeholder */}
           <div className="relative">
             <div className="aspect-square rounded-3xl bg-gradient-to-br from-blue-500/20 to-purple-500/20 dark:from-blue-500/10 dark:to-purple-500/10 backdrop-blur-xl border-2 border-gray-200/50 dark:border-gray-700/50 flex items-center justify-center overflow-hidden">
-              {/* Placeholder - Ganti dengan foto nanti */}
-              <div className="text-center p-8">
-                <div className="text-8xl mb-4">👨‍💻</div>
-                <p className="text-gray-500 dark:text-gray-400 text-sm">
-                  Foto Developer
-                  <br/>
-                  <span className="text-xs">(Placeholder - bisa diganti nanti)</span>
-                </p>
+              <div className="aspect-square rounded-3xl overflow-hidden relative">
+                <img src="/about-photo.jpg" alt="Gian-Developer Muda" />
+                {/* <Image
+                  src="/about-photo.jpg" // path file di folder /public
+                  alt="Gian Christo Yuhendi — Developer"
+                  fill // mengisi parent .relative .aspect-square
+                  className="object-cover object-center"
+                  priority // muat lebih cepat (opsional)
+                /> */}
               </div>
             </div>
-            
+
             {/* Floating badge */}
             <div className="absolute -bottom-6 -right-6 bg-white dark:bg-gray-800 rounded-2xl p-4 shadow-xl border border-gray-200 dark:border-gray-700">
               <div className="flex items-center gap-3">
                 <div className="text-3xl">🎓</div>
                 <div>
-                  <p className="text-sm font-bold text-gray-900 dark:text-white">Siswa SMP</p>
-                  <p className="text-xs text-gray-600 dark:text-gray-400">Kelas 8</p>
+                  <p className="text-sm font-bold text-gray-900 dark:text-white">
+                    Siswa SMP
+                  </p>
+                  <p className="text-xs text-gray-600 dark:text-gray-400">
+                    Kelas 8
+                  </p>
                 </div>
               </div>
             </div>
@@ -123,13 +135,25 @@ export default function AboutContent() {
             </h2>
             <div className="space-y-4 text-gray-600 dark:text-gray-300">
               <p>
-                Nama saya <strong className="text-gray-900 dark:text-white">[Nama Kamu]</strong>, seorang siswa SMP kelas 8 yang memiliki passion besar dalam dunia web development dan teknologi.
+                Nama saya{" "}
+                <strong className="text-gray-900 dark:text-white">
+                  Gian Christo Yuhendi
+                </strong>
+                , seorang siswa SMP kelas 8 yang memiliki passion besar dalam
+                dunia web development dan teknologi.
               </p>
               <p>
-                Meskipun masih muda, saya sudah mengerjakan berbagai project website untuk klien dari berbagai industri. Saya percaya bahwa <strong className="text-purple-600 dark:text-purple-400">usia bukan penghalang untuk menciptakan karya berkualitas</strong>.
+                Meskipun masih muda, saya sudah mengerjakan berbagai project
+                website untuk klien dari berbagai industri. Saya percaya bahwa{" "}
+                <strong className="text-purple-600 dark:text-purple-400">
+                  usia bukan penghalang untuk menciptakan karya berkualitas
+                </strong>
+                .
               </p>
               <p>
-                Dengan kombinasi kreativitas muda dan dedikasi tinggi, saya siap membantu bisnis Anda berkembang melalui website yang modern, responsif, dan SEO-friendly.
+                Dengan kombinasi kreativitas muda dan dedikasi tinggi, saya siap
+                membantu bisnis Anda berkembang melalui website yang modern,
+                responsif, dan SEO-friendly.
               </p>
             </div>
 
@@ -139,19 +163,25 @@ export default function AboutContent() {
                 <div className="text-2xl font-black text-blue-600 dark:text-blue-400">
                   <CountUpAnimation end={150} suffix="+" duration={2} />
                 </div>
-                <div className="text-xs text-gray-600 dark:text-gray-400 mt-1">Projects</div>
+                <div className="text-xs text-gray-600 dark:text-gray-400 mt-1">
+                  Projects
+                </div>
               </div>
               <div className="text-center p-4 bg-gray-50 dark:bg-gray-800/50 rounded-xl">
                 <div className="text-2xl font-black text-purple-600 dark:text-purple-400">
                   <CountUpAnimation end={100} suffix="%" duration={2} />
                 </div>
-                <div className="text-xs text-gray-600 dark:text-gray-400 mt-1">Satisfaction</div>
+                <div className="text-xs text-gray-600 dark:text-gray-400 mt-1">
+                  Satisfaction
+                </div>
               </div>
               <div className="text-center p-4 bg-gray-50 dark:bg-gray-800/50 rounded-xl">
                 <div className="text-2xl font-black text-pink-600 dark:text-pink-400">
                   <CountUpAnimation end={2} suffix="+" duration={2} />
                 </div>
-                <div className="text-xs text-gray-600 dark:text-gray-400 mt-1">Years Exp</div>
+                <div className="text-xs text-gray-600 dark:text-gray-400 mt-1">
+                  Years Exp
+                </div>
               </div>
             </div>
           </div>
@@ -179,17 +209,27 @@ export default function AboutContent() {
                 <div className="flex items-center justify-between mb-3">
                   <div className="flex items-center gap-3">
                     <span className="text-2xl">{skill.icon}</span>
-                    <span className="font-bold text-gray-900 dark:text-white">{skill.name}</span>
+                    <span className="font-bold text-gray-900 dark:text-white">
+                      {skill.name}
+                    </span>
                   </div>
                   <span className="text-sm font-bold text-purple-600 dark:text-purple-400">
-                    <CountUpAnimation end={skill.level} suffix="%" duration={2} />
+                    <CountUpAnimation
+                      end={skill.level}
+                      suffix="%"
+                      duration={2}
+                    />
                   </span>
                 </div>
                 <div className="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2 overflow-hidden">
                   <motion.div
                     initial={{ width: 0 }}
                     animate={{ width: `${skill.level}%` }}
-                    transition={{ duration: 1.5, delay: 0.5 + index * 0.1, ease: "easeOut" }}
+                    transition={{
+                      duration: 1.5,
+                      delay: 0.5 + index * 0.1,
+                      ease: "easeOut",
+                    }}
                     className="h-full bg-gradient-to-r from-blue-500 to-purple-500 rounded-full"
                   />
                 </div>
@@ -284,8 +324,18 @@ export default function AboutContent() {
               className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-white text-purple-600 font-bold rounded-2xl hover:scale-105 transition-all duration-300 shadow-lg"
             >
               Lihat Paket Harga
-              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+              <svg
+                className="w-5 h-5"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2.5}
+                  d="M13 7l5 5m0 0l-5 5m5-5H6"
+                />
               </svg>
             </Link>
             <Link
@@ -293,14 +343,23 @@ export default function AboutContent() {
               className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-transparent border-2 border-white text-white font-bold rounded-2xl hover:bg-white hover:text-purple-600 transition-all duration-300"
             >
               Hubungi Kami
-              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
+              <svg
+                className="w-5 h-5"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2.5}
+                  d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"
+                />
               </svg>
             </Link>
           </div>
         </motion.div>
-
       </div>
     </div>
-  )
+  );
 }
