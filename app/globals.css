@@ -1,26 +1,143 @@
-@import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+/* Background Grid Pattern - Subtle */
+.bg-grid-pattern {
+  background-image: 
+    linear-gradient(to right, rgba(209, 213, 219, 0.3) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(209, 213, 219, 0.3) 1px, transparent 1px);
+  background-size: 50px 50px;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+/* Grid di dark mode - Lebih soft */
+.dark .bg-grid-pattern {
+  background-image: 
+    linear-gradient(to right, rgba(75, 85, 99, 0.2) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(75, 85, 99, 0.2) 1px, transparent 1px);
+  background-size: 50px 50px;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+/* Animasi Shimmer - Natural & Random */
+@keyframes shimmer {
+  0% {
+    transform: translateX(-100%) skewX(-15deg);
+    opacity: 0;
+  }
+  15% {
+    opacity: 0.6;
+  }
+  50% {
+    opacity: 0.3;
+  }
+  85% {
+    opacity: 0.6;
+  }
+  100% {
+    transform: translateX(150%) skewX(-15deg);
+    opacity: 0;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@keyframes shimmerDelayed {
+  0% {
+    transform: translateX(-120%) skewX(-20deg);
+    opacity: 0;
+  }
+  20% {
+    opacity: 0.4;
+  }
+  50% {
+    opacity: 0.2;
+  }
+  80% {
+    opacity: 0.5;
+  }
+  100% {
+    transform: translateX(150%) skewX(-20deg);
+    opacity: 0;
+  }
+}
+
+/* Shimmer Effect 1 - Light Mode */
+.shimmer-effect {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 40%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(147, 197, 253, 0.15) 30%,
+    rgba(196, 181, 253, 0.2) 50%,
+    rgba(147, 197, 253, 0.15) 70%,
+    transparent 100%
+  );
+  animation: shimmer 12s ease-in-out infinite;
+  pointer-events: none;
+  filter: blur(20px);
+}
+
+/* Shimmer Effect 2 - Delayed */
+.shimmer-effect-delayed {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 35%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(196, 181, 253, 0.12) 30%,
+    rgba(147, 197, 253, 0.18) 50%,
+    rgba(196, 181, 253, 0.12) 70%,
+    transparent 100%
+  );
+  animation: shimmerDelayed 16s ease-in-out infinite;
+  animation-delay: 3s;
+  pointer-events: none;
+  filter: blur(25px);
+}
+
+/* Shimmer di Dark Mode - Lebih Soft & Tidak Silau */
+.dark .shimmer-effect {
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(147, 197, 253, 0.08) 30%,
+    rgba(196, 181, 253, 0.12) 50%,
+    rgba(147, 197, 253, 0.08) 70%,
+    transparent 100%
+  );
+  filter: blur(30px);
+}
+
+.dark .shimmer-effect-delayed {
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(196, 181, 253, 0.06) 30%,
+    rgba(147, 197, 253, 0.10) 50%,
+    rgba(196, 181, 253, 0.06) 70%,
+    transparent 100%
+  );
+  filter: blur(35px);
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Custom selection */
+::selection {
+  background-color: rgba(147, 51, 234, 0.3);
+  color: inherit;
+}
+
+/* Remove focus outline but keep accessibility */
+*:focus-visible {
+  outline: 2px solid rgba(147, 51, 234, 0.5);
+  outline-offset: 2px;
 }
